@@ -33,11 +33,11 @@
                 if (winner != null) {
                     if (winner === "X") {
                         Swal.fire('You win!').then(function () {
-                            window.location.reload()
+                            clearBoxes()
                         });
                     } else {
                         Swal.fire('You lose!').then(function () {
-                            window.location.reload()
+                            clearBoxes()
                         });
                     }
                     return;
@@ -61,11 +61,11 @@
                 if (winner != null) {
                     if (winner === "X") {
                         Swal.fire('You win!').then(function () {
-                            window.location.reload()
+                            clearBoxes()
                         });
                     } else {
                         Swal.fire('You lose!').then(function () {
-                            window.location.reload()
+                            clearBoxes()
                         });
                     }
                     return;
@@ -73,7 +73,7 @@
 
                 if (!buttons.includes("⠀")) {
                     Swal.fire('Tie!').then(function () {
-                        window.location.reload()
+                        clearBoxes()
                     });
                 }
             }
@@ -101,6 +101,13 @@
             }
 
             return null;
+        }
+
+        function clearBoxes() {
+            for (let i = 0; i < 9; i++) {
+                const button = document.getElementById("btn-" + i);
+                button.innerText = "⠀";
+            }
         }
     </script>
 </head>
