@@ -6,3 +6,8 @@
     outline: none !important;
     box-shadow: none !important;
 }
+
+.form-switch:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
