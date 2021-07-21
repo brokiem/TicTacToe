@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <script>
-        function clickEvent(id) {
+        async function clickEvent(id) {
             const button = document.getElementById(id);
             if (button.innerText === "⠀") {
                 button.innerText = "X";
@@ -29,7 +29,7 @@
                     buttons[i.toString()] = button.innerText;
                 }
 
-                let winner = calculateWinner(buttons);
+                let winner = await calculateWinner(buttons);
                 if (winner != null) {
                     if (winner === "X") {
                         Swal.fire('You win!').then(function () {
@@ -57,7 +57,7 @@
                     buttons[i.toString()] = button.innerText;
                 }
 
-                winner = calculateWinner(buttons);
+                winner = await calculateWinner(buttons);
                 if (winner != null) {
                     if (winner === "X") {
                         Swal.fire('You win!').then(function () {
@@ -79,7 +79,7 @@
             }
         }
 
-        function calculateWinner(squares) {
+        async function calculateWinner(squares) {
             const lines = [
                 [0, 1, 2],
                 [3, 4, 5],
